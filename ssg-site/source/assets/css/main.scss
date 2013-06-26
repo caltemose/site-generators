@@ -1,0 +1,61 @@
+$maxWidthDesktop: 50em;
+$maxWidthDesktopRem: 50rem;
+
+
+body {
+	margin: 1em;
+	background: #ddd;
+	line-height: 120%;
+}
+
+h1 {
+	font-size: 1.5em;	
+
+	> small {
+		display: block;
+		margin-top: 0.7em;
+		font-size: 0.7em;
+		color: #555;
+	}
+}
+
+a {
+	text-decoration: none;
+}
+
+ol, ul {
+	width: 80%;
+}
+
+li {
+	margin-bottom: 0.3em;
+}
+
+
+/*
+--------------------------------------------------------
+media query for middle/portrait size range
+
+*/
+@media screen and (min-width: 34em) {
+
+
+}
+
+
+/*
+--------------------------------------------------------
+media query for larger devices
+
+*/
+@media screen and (min-width: $maxWidthDesktop) {
+	
+	body { font-size: 20px; }
+
+	body > article {
+		width: 100%;
+		max-width: $maxWidthDesktopRem;
+		margin: 0 auto;
+	}
+
+}
