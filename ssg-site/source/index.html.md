@@ -10,11 +10,11 @@ Howdy. I gave a five-minute presentation for the Atlanta Web Design Group the ev
 3. Modern tools for simplifying and automating our process
 4. How to choose which tools are right for you
 
-And I concluded with a quick demo of how easy it is to modify, build and publish content using a modern static site generator (Middleman in this case). Q&A followed.
+And I concluded with a quick demo of how easy it is to modify, build and publish content using a modern static site generator (Middleman in this case). Q&amp;A followed.
 
-<!--
+
 Here are my [slides](assets/pdf/site-generators-preso.pdf).
--->
+
 
 Here are some useful resources from the talk:
 

@@ -1,10 +1,13 @@
 $maxWidthDesktop: 50em;
 $maxWidthDesktopRem: 50rem;
 
+$bgColor: #fff;
+$typeColor: #000;
 
 body {
 	margin: 1em;
-	background: #ddd;
+	background: $bgColor;
+	color: $typeColor;
 	line-height: 120%;
 }
 
@@ -15,7 +18,7 @@ h1 {
 		display: block;
 		margin-top: 0.7em;
 		font-size: 0.7em;
-		color: #555;
+		color: transparentize($typeColor, 0.3);
 	}
 }
 
