@@ -10,6 +10,7 @@ set :images_dir, 'assets/img'
 set :markdown, :tables => true, :autolink => true, :fenced_code_blocks => true
 set :markdown_engine, :redcarpet
 
+::Compass.configuration.sass_options = { :line_comments => false }
 
 # Build-specific configuration
 configure :build do

@@ -1,10 +1,41 @@
-$maxWidthDesktop: 50em;
-$maxWidthDesktopRem: 50rem;
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary {display: block;} video {display: inline-block;*display: inline;*zoom: 1;}
+html {font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;} html,button,input,select,textarea {font-family: serif;}
+a:focus {outline: thin dotted;} a:active,a:hover {outline: 0;} img {border: 0; -ms-interpolation-mode: bicubic;} svg:not(:root) {overflow: hidden;} figure {margin: 0;} form {margin: 0;}
+img {vertical-align: middle;}
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+// .hidden {display: none !important;visibility: hidden;}
+// .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+// .clearfix:before, .clearfix:after {content: " "; display: table;} .clearfix:after {clear: both;} .clearfix {*zoom: 1;}*/
+/*
 
-$bgColor: #fff;
+
+
+
+
+
+reset (reduced from H5BP) above
+my styles below
+
+
+
+
+
+
+*/
+$maxWidthDesktop: 44em;
+$maxWidthDesktopRem: 44rem;
+$copyFont: 'PT Sans', sans-serif;
+$bgColor: #ddd;
 $typeColor: #000;
+$linkColor: #2577A1;
+$hoverColor: darken($linkColor, 20%);
+$footerFontSize: 0.7em;
+$codeFontColor: #BCFFBA;
+$codeBgColor: #222; //darken($bgColor, 5%);
+//$footerBgColor: #
 
 body {
+	font-family: $copyFont;
 	margin: 1em;
 	background: $bgColor;
 	color: $typeColor;
@@ -12,18 +43,49 @@ body {
 }
 
 h1 {
-	font-size: 1.5em;	
+	font-size: 1.3em;	
+	// background: darken($bgColor, 2%);
+	// padding: 0.3em;
+	line-height: 80%;
 
 	> small {
 		display: block;
-		margin-top: 0.7em;
+		margin-top: 0.3em;
 		font-size: 0.7em;
-		color: transparentize($typeColor, 0.3);
+		color: transparentize($typeColor, 0.6);
+	}
+
+	> a {
+		display: block;
+		text-align: right;
+		margin-top: 0.3em;
+		font-size: 0.7em;
 	}
 }
 
+h2 {
+	margin-top: 1.5em;
+}
+
+h3 {
+	margin: 2em 0 0.5em;
+}
+
+h2 + h3 {
+	margin-top: 0;
+}
+
+p {
+	margin: 0.3em 0 0.5em;
+}
+
 a {
+	color: $linkColor;
 	text-decoration: none;
+
+	&:hover {
+		color: $hoverColor;
+	}
 }
 
 ol, ul {
@@ -34,14 +96,38 @@ li {
 	margin-bottom: 0.3em;
 }
 
+code {
+	padding: 0.1em;
+	background: lighten($bgColor, 4%); //$codeBgColor;
+	color: #0F520D; //$codeFontColor;
+	font-family: 'Monaco', 'Lucida Console', 'Andale Mono', FreeMono, 'Osaka Monospaced', Courier, monospace;
+	font-size: 0.9em;
+}
+
+pre {
+	background: $codeBgColor;
+	display: block;
+	padding: 0.4em;
+}
+
+pre > code {
+	color: $codeFontColor;
+	background: none;
+}
+
+body > footer {
+	margin-top: 3em;
+	font-size: $footerFontSize;
+}
 
 /*
 --------------------------------------------------------
 media query for middle/portrait size range
 
 */
-@media screen and (min-width: 34em) {
+@media screen and (min-width: 30em) {
 
+	body { font-size: 19px; }
 
 }
 
@@ -53,12 +139,20 @@ media query for larger devices
 */
 @media screen and (min-width: $maxWidthDesktop) {
 	
-	body { font-size: 20px; }
+	body { font-size: 21px; }
 
-	body > article {
+	body > article, body > footer {
 		width: 100%;
 		max-width: $maxWidthDesktopRem;
-		margin: 0 auto;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	h1 {
+		font-size: 2em;
+		small {
+			font-size: 0.6em;
+		}
 	}
 
 }
