@@ -91,6 +91,13 @@ These days we expect our CSS and Javascript to be shrunk to improve performance.
 Most site generator apps have support for uglifying your code.
 
 
+### CoffeeScript
+
+Many site generators come with support for [CoffeeScript](http://coffeescript.org/) -- a shorthand language for writing Javascript. If you write Javascript, you may find CoffeeScript useful for it's object-oriented approach to writing JS. It also allows you to write a bit less code to accomplish your JS tasks.
+
+If you're just getting started with Javascript, or your JS is mainly simple stuff like basic jQuery calls, then you can probably skip over CoffeeScript for the moment. CoffeeScript is best for those of us who write more application-level Javascript.
+
+
 ## Site Generator Apps
 
 Here are the graphical site generator apps I mentioned which may be more appropriate if you're not comfortable with using the command line: 
@@ -105,7 +112,7 @@ Here are the two site generator apps I discussed. Both run on the command-line a
 
 For another general overview of site generators, [check out this article](http://www.mickgardner.com/2012/12/an-introduction-to-static-site.html) or [this github repo](https://github.com/skx/static-site-generators). There are useful lists of site generator tools [here](https://iwantmyname.com/blog/2011/02/list-static-website-generators.html) and [here](https://gist.github.com/davatron5000/2254924).
 
-During the Q&amp;A session, a guy in the audience also mentioned [Octopress](http://octopress.org) which is a blogging framework built on [Jekyll](http://jeckyllrb.com), a well-established site generator. I might have to check that out next.
+During the Q&amp;A session, a guy in the audience also mentioned [Octopress](http://octopress.org) which is a blogging framework built on [Jekyll](http://jekyllrb.com), a well-established site generator. I might have to check that out next. If you're that dude, connect.
 
 Got questions? Ask away:
 
