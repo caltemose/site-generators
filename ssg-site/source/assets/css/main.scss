@@ -24,7 +24,8 @@ my styles below
 */
 $maxWidthDesktop: 44em;
 $maxWidthDesktopRem: 44rem;
-$copyFont: 'PT Sans', sans-serif;
+$titleFont: 'Arvo', Helvetica, Arial, sans-serif;
+$copyFont: 'PT Sans', Helvetica, Arial, sans-serif;
 $bgColor: #ddd;
 $typeColor: #000;
 $linkColor: #2577A1;
@@ -43,16 +44,19 @@ body {
 }
 
 h1 {
-	font-size: 1.3em;	
+	font-size: 1.3em;
+	font-family: $titleFont;	
 	// background: darken($bgColor, 2%);
 	// padding: 0.3em;
-	line-height: 80%;
+	line-height: 105%;
 
 	> small {
 		display: block;
 		margin-top: 0.3em;
 		font-size: 0.7em;
-		color: transparentize($typeColor, 0.6);
+		font-family: $copyFont;
+		color: transparentize($typeColor, 0.4);
+		line-height: 100%;
 	}
 
 	> a {
@@ -143,6 +147,8 @@ pre {
 	background: $codeBgColor;
 	display: block;
 	padding: 0.4em;
+	overflow: hidden;
+	font-size: 0.8em;
 }
 
 pre > code {

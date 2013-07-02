@@ -3,7 +3,7 @@
 	<small>Improving Your Site-Building Process with Site Generator Tools</small>
 </h1>
 
-I gave a five-minute presentation for the [Atlanta Web Design Group](http://awdg.org) the evening of Thursday, June 27th, 2013. I spoke at [Hypepotamus](http://hypepotamus.com), the vibrant startup space in midtown Atlanta (thanks Heath, Kevin and Scott). The rough outline for this presentation was:
+I gave a five-minute presentation for the [Atlanta Web Design Group](http://awdg.org) the evening of Thursday, June 27th, 2013 at [Hypepotamus](http://hypepotamus.com), the vibrant startup space in midtown Atlanta (thanks Heath, Kevin and Scott). The rough outline for this presentation was:
 
 1. A brief history of the process for building HTML pages
 2. The complexity of modern process
@@ -14,19 +14,28 @@ I concluded with a quick demo of how easy it is to modify, build and publish con
 
 **I hope those of you who attended learned from my mistake and don't rely on data being in the clipboard for your presentations.** Weak sauce.
 
-While there are many site generator apps and frameworks with a variety of different specialities and features, they all have the same core goal which is to help you automate the tedious parts of your process for building sites. Let's get into their feature sets.
+While there are many site generator apps and frameworks with a variety of different specialities and features, they all have the same core goal: to help you automate the tedious parts of your process for building sites. Let's get into their feature sets.
 
 ## Site Generator Features
 
 ### Includes
 
-Includes allow you to store code that appears on every page in a single file that can be included in your templates and pages so that you do not have to edit the same code in multiple locations when you make changes.
+Includes allow you to store code that appears on multiple pages in a single file that can be included in your templates and pages. This keeps you from having to edit the same code in multiple locations when you make changes.
 
-Here's an example from a .erb template (learn about ERB here or here):
+Here is an example from a .erb (eRuby) template (learn about [eRuby on Wikipedia](http://en.wikipedia.org/wiki/ERuby)):
 
 	<%= partial "partials/header" %>
 
-The code above would insert the file at ```./partials/header.erb``` into the current file. In this case that would include the HTML code that appears above the ```<body>``` tag.
+The code above would insert the file at ```./partials/header.erb``` into the current file. A typical and simple example might be: 
+
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<title>Sample Page Title</title>
+			<link href="/assets/css/main.css" media="screen" rel="stylesheet" type="text/css" />
+		</head>
+		<body>
 
 
 ### Templating languages
@@ -41,7 +50,7 @@ They allow you to do things like change page content based on data contained in 
 	title: Static Site Generators are Great
 	---
 
-And your template might look like this:
+And your template (in .erb) might look like this:
 
 	<title><%= data.page.title =%></title>
 
@@ -49,6 +58,11 @@ Which when compiled would render this HTML:
 
 	<title>Static Site Generators are Great</title>
 
+Or a Jade template might look like this:
+
+	title {page.metadata.title}
+
+To accomplish the same result.
 
 
 ### Markup languages
@@ -82,7 +96,7 @@ You get the idea.
 
 ### CSS Processing and Helpers
 
-Site generators generally come with a css-preprocessing language, usually [SASS](http://sass-lang.com). I'm not going to go into their functionality here but if you write CSS and aren't familiar with SASS or [LESS](http://lesscss.org), check them out. They give CSS some much-needed intelligence. You can also expect support for the [Compass](http://compass-style.org) styling framework.
+Site generators generally come with a css-preprocessing language, usually [SASS](http://sass-lang.com). I'm not going to go into their functionality here but if you write CSS and aren't familiar with SASS or [LESS](http://lesscss.org), check them out (try [this]() or [this]()). They give CSS some much-needed intelligence. You can also expect support for the [Compass CSS authoring framework](http://compass-style.org).
 
 ### Uglifying: Minification and Compression
 
@@ -93,16 +107,16 @@ Most site generator apps have support for uglifying your code.
 
 ### CoffeeScript
 
-Many site generators come with support for [CoffeeScript](http://coffeescript.org/) -- a shorthand language for writing Javascript. If you write Javascript, you may find CoffeeScript useful for it's object-oriented approach to writing JS. It also allows you to write a bit less code to accomplish your JS tasks.
+Many site generators come with support for [CoffeeScript](http://coffeescript.org/) &ndash; a shorthand language for writing Javascript. If you write Javascript, you may find CoffeeScript useful for it's object-oriented approach to writing JS. It helps you write a bit less code to accomplish your JS needs.
 
-If you're just getting started with Javascript, or your JS is mainly simple stuff like basic jQuery calls, then you can probably skip over CoffeeScript for the moment. CoffeeScript is best for those of us who write more application-level Javascript.
+If you're just getting started with Javascript, or your JS is mainly simple stuff like basic jQuery calls, then you can probably skip over CoffeeScript for the moment. CoffeeScript is best for those who write modular, application-like Javascript.
 
 
 ## Site Generator Apps
 
 Here are the graphical site generator apps I mentioned which may be more appropriate if you're not comfortable with using the command line: 
 
-* [Codekit](http://incident57.com/codekit/‎)
+* [Codekit](http://incident57.com/codekit/)
 * [Hammer For Mac](http://hammerformac.com)
 
 Here are the two site generator apps I discussed. Both run on the command-line and are fairly easy to install.
