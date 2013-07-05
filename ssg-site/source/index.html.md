@@ -162,6 +162,8 @@ Here are the graphical site generator apps I mentioned which may be more appropr
 * [Codekit](http://incident57.com/codekit/)
 * [Hammer For Mac](http://hammerformac.com)
 
+Keep in mind their functionality is limited compared to the command line tools. And you really shouldn't be afraid of the command line. 
+
 Here are the two site generator apps I discussed. Both run on the command-line and are fairly easy to install.
 
 * [Wintersmith](http://wintersmith.io/)
