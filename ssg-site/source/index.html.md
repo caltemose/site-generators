@@ -24,19 +24,20 @@ Includes allow you to store code that appears on multiple pages in a single file
 
 Here is an example from a .erb (eRuby) template (learn about [eRuby on Wikipedia](http://en.wikipedia.org/wiki/ERuby)):
 
-	<%= partial "partials/header" %>
+<pre><code><%= partial <span class="content">"partials/header"</span> %>
+</code></pre>
 
-The code above would insert the file at ```./partials/header.erb``` into the current file. A typical and simple example might be: 
+The code above would insert the file at ```./partials/header.erb``` into the current file. The contents of that header file might look something like this:
 
-	<!DOCTYPE html>
-	<html>
-		<head>
-			<meta charset="utf-8">
-			<title>Sample Page Title</title>
-			<link href="/assets/css/main.css" media="screen" rel="stylesheet" type="text/css" />
-		</head>
-		<body>
-
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=<span class="content">"utf-8"</span>&gt;
+    &lt;title&gt;<span class="content">Sample Page Title</span>&lt;/title&gt;
+    &lt;link href=<span class="content">"/assets/css/main.css"</span> media=<span class="content">"screen"</span> rel=<span class="content">"stylesheet"</span> type=<span class="content">"text/css"</span> /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+</code></pre>
 
 ### Templating languages
 
@@ -44,7 +45,7 @@ I discussed [Jade](http://jade-lang.com) in the talk but there a large number of
 
 They aren't meant to do things like pull content from a database or process form uploads - that would require a live server-side language (PHP, Ruby, etc). 
 
-They allow you to do things like change page content based on data contained in the initial lines of the file stored in a simple data format ([YAML](http://www.yaml.org/) in this case) that looks like this:
+They allow you to do things like change page content based on data contained in the initial lines of the file (called frontmatter) stored in a simple data format ([YAML](http://www.yaml.org/) in this case) that looks like this:
 
 	---
 	title: Static Site Generators are Great
@@ -52,44 +53,46 @@ They allow you to do things like change page content based on data contained in 
 
 And your template (in .erb) might look like this:
 
-	<title><%= data.page.title =%></title>
+<pre><code>&lt;title&gt;<%= <span class="content">data.page.title</span> =%>&lt;/title&gt;</code></pre>
 
 Which when compiled would render this HTML:
 
-	<title>Static Site Generators are Great</title>
+<pre><code>&lt;title&gt;<span class="content">Static Site Generators are Great</span>&lt;/title&gt;</code></pre>
 
 Or a Jade template might look like this:
 
-	title {page.metadata.title}
+<pre><code>title {<span class="content">page.metadata.title</span>}</code></pre>
 
 To accomplish the same result.
 
 
-### Markup languages
+### Lightweight markup languages
 
-Markdown is the language I mentioned in my presentation but there are many other simple markup languages you can use to simplify the process of writing page content. These languages make writing web page content very easy since they abstract HTML markup into a simple and easy-to-read language. For instance, a typical web page might start like this:
+Markdown is the language I mentioned in my presentation but there are many other simple markup languages you can use to ease the process of writing page content. These languages make writing web content easy since they abstract HTML markup into a simple and easy-to-read language. For instance, a typical web page might start like this:
 
-	# This is a Primary Page Title
-	## This is a secondary title
+<pre><code># This is a Primary Page Title
+## This is a secondary title
 	
-	Here is the first paragraph. An unordered list:
+Here is the first paragraph. An unordered list:
 
-	- **strong item 1**
-	- *emphasized item 2*
-	- [a link](http://i.link.it)
+- **strong item 1**
+- *emphasized item 2*
+- [a link](http://i.link.it)
+</code></pre>
 
 And be rendered like this:
 
-	<h1>This is a Primary Page Title</h2>
-	<h2>This is a secondary title</h2>
-	
-	<p>Here is the first paragraph. An unordered list:</p>
+<pre><code>&lt;h1&gt;<span class="content">This is a Primary Page Title</span>&lt;/h2&gt;
+&lt;h2&gt;<span class="content">This is a secondary title</span>&lt;/h2&gt;
 
-	<ul>
-		<li><strong>strong item 1</strong></li>
-		<li><em>emphasized item 2</em></li>
-		<li><a href="http://i.link.it">item 3</a></li>
-	</ul>
+&lt;p&gt;<span class="content">Here is the first paragraph. An unordered list:</span>&lt;/p&gt;
+
+&lt;ul&gt;
+   &lt;li&gt;&lt;strong&gt;<span class="content">strong item 1</span>&lt;/strong&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;em&gt;<span class="content">emphasized item 2</span>&lt;/em&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href="http://i.link.it"&gt;<span class="content">item 3</span>&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
 
 You get the idea.
 
@@ -98,9 +101,43 @@ You get the idea.
 
 Site generators generally come with a css-preprocessing language, usually [SASS](http://sass-lang.com). I'm not going to go into their functionality here but if you write CSS and aren't familiar with SASS or [LESS](http://lesscss.org), check them out (try [this]() or [this]()). They give CSS some much-needed intelligence. You can also expect support for the [Compass CSS authoring framework](http://compass-style.org).
 
+To give you a taste of the benefits of using a css preprocessor, here's an example using SASS:
+
+<pre><code>$linkColor: <span class="content">#2577A1</span>;
+
+a {
+   color: <span class="content">$linkColor</span>;
+
+   &:hover {
+      color: darken($linkColor, <span class="content">20%</span>);
+   }
+}</code></pre>
+
+This sample shows ```variables```, built-in functions (```darken```) and CSS nesting (starting with ```&:hover```). This SASS would produce the following CSS when rendered:
+
+<pre><code>a {
+   color: <span class="content">#3333cc</span>;
+}
+a:hover {
+   color: <span class="content">#123a4e</span>;
+}
+</code></pre>
+
+There's a lot more power in using SASS or LESS. If you write a lot of CSS and aren't using these tools, learn how to use them immediately. They will save you much time.
+
+
 ### Uglifying: Minification and Compression
 
-These days we expect our CSS and Javascript to be shrunk to improve performance. This means at a minimum removing all the white space from your CSS or JS files to reduce file size. It can also involve obfuscating your JS code so that your function and variable names are reduced down to short names to save space in the file. In other words, your function ```closeNavigation()``` could become ```c()``` to save file size. 
+These days we expect our CSS and Javascript to be shrunk to improve performance. This means at a minimum removing all the white space from your CSS or JS files to reduce file size. It can also involve obfuscating your JS code so that parts of your code are reduced down to shorter variables and names to save space in the file. In other words, your Javascript function here:
+
+<pre><code>function updateNav(<span class="content">color</span>) {
+  return $(<span class="content">'#nav a'</span>).css(<span class="content">'color', color</span>);
+}</code></pre>
+
+Would become something like this:
+
+<pre><code>function updateNav(<span class="content">a</span>){return $(<span class="content">"#nav a"</span>).css(<span class="content">"color",a</span>)}</code></pre>
+
 
 Most site generator apps have support for uglifying your code.
 
@@ -108,6 +145,12 @@ Most site generator apps have support for uglifying your code.
 ### CoffeeScript
 
 Many site generators come with support for [CoffeeScript](http://coffeescript.org/) &ndash; a shorthand language for writing Javascript. If you write Javascript, you may find CoffeeScript useful for it's object-oriented approach to writing JS. It helps you write a bit less code to accomplish your JS needs.
+
+For example, the function shown in the previous section would look like this as CoffeeScript:
+
+<pre><code>updateNav = (color) ->
+  $(<span class="content">"#nav a"</span>).css <span class="content">"color"</span>, <span class="content">color</span></code></pre>
+
 
 If you're just getting started with Javascript, or your JS is mainly simple stuff like basic jQuery calls, then you can probably skip over CoffeeScript for the moment. CoffeeScript is best for those who write modular, application-like Javascript.
 
