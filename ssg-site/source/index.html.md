@@ -30,12 +30,12 @@ During the Q&amp;A session, a guy in the audience also mentioned [Octopress](htt
 
 ### Using the command line
 
-Setting these apps up requires use of the command line and Github and installing ruby gems and/or node modules. If you are uncomfortable with those kinds of tasks, either become comfortable with them or, if you are still interested in these apps, get some help using the command line. You'll be glad you did. 
+Setting up these apps requires use of the command line, Github and installing ruby gems and/or node modules. If you are uncomfortable with those kinds of tasks, find someone to help you learn. You'll be glad you did.
 
 
 ## Site Generator Features
 
-Any process that looks to expedite code generation for web sites is going to have  standard core features: templating systems and content storage systems. In the case of our apps, we use a templating language which gives us templates and usually some form of scripting. And for content storage we use lightweight markup languages which make it easy for us to focus on content while writing it rather than being distracted by HTML markup. These features could be expressed like so:
+Any process looking to expedite code generation for web sites is going to have  standard core features: templating systems, content storage systems and local http service. In the case of our apps, we use a templating language which gives us templates and usually some form of scripting. And for content storage we use lightweight markup languages which make it easy for us to focus on content while writing it rather than being distracted by HTML markup. These features could be expressed like so:
 
     templates + content + {some processing} = HTML files ready for browsing
 
@@ -68,6 +68,9 @@ Or a Jade template might look like this:
 <pre><code>title {<span class="content">page.metadata.title</span>}</code></pre>
 
 To accomplish the same result.
+
+We can use templates to describe complete types of pages or we can build templates for modules in a web application. Whatever you need.
+
 
 ### Includes
 
