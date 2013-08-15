@@ -1,5 +1,5 @@
 ---
-title: Static Site Generator Talk - Atlanta Codecamp 2014
+title: Static Site Generator Talk - Atlanta Codecamp 2013
 ---
 
 I'll be speaking at [Atlanta Code Camp](http://atlantacodecamp.com) on August 24. The talk will be an extended version of a talk I originally gave at an [Atlanta Web Design Group](http://awdg.org) event earlier this summer. You can [read my summary of that event here](ssg-awdg).

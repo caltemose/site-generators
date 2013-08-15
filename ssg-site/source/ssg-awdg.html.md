@@ -1,3 +1,7 @@
+---
+title: Static Site Generator Talk - For the AWDG at Hypepotamus - June 2013
+---
+
 I gave a five-minute presentation for the [Atlanta Web Design Group](http://awdg.org) the evening of Thursday, June 27th, 2013 at [Hypepotamus](http://hypepotamus.com), the vibrant startup space in midtown Atlanta (thanks Heath, Kevin and Scott). The rough outline for this presentation was:
 
 1. A brief history of the process for building HTML pages
