@@ -1,0 +1,35 @@
+= partial 'partials/header'
+
+article.recipe
+
+  h1= data.page.title
+  
+
+  section.ingredients
+
+    h2 Ingredients:
+
+    ul.ingredients
+    
+      - for ingredient in data.page.ingredients
+        li = ingredient
+
+
+  section.directions
+
+    h2 Directions:
+    
+    == yield
+
+
+  dl.details
+
+    dt Prep Time:
+    dd= data.page.preptime
+    dt Cook Time:
+    dd= data.page.cooktime
+    dt Serves:
+    dd= data.page.serves
+
+
+= partial 'partials/footer'

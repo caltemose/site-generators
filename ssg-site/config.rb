@@ -1,3 +1,6 @@
+require 'slim'
+set :slim, :pretty => true
+
 set :site_title, "Let the Computer Do the Work - Static Site Generators"
 set :site_url, "http://ssg.chadaltemose.com"
 set :site_description, ""
@@ -13,13 +16,14 @@ set :markdown, :tables => true, :autolink => true, :fenced_code_blocks => true
 
 # Build-specific configuration
 configure :build do
-  # activate :minify_css
-  # activate :minify_javascript
+  activate :minify_css
+  activate :minify_javascript
   activate :relative_assets
 end
 
-#page "/projects/*", :layout => "project"
-#page "/feed.xml", :layout => false
+page "/*", :layout => 'basic'
+page "/recipes/*", :layout => "recipe"
+page "/recipes/index.html", :layout => "recipe-list"
 
 activate :livereload
 activate :directory_indexes

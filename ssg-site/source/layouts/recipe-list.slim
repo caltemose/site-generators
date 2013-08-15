@@ -1,0 +1,15 @@
+= partial 'partials/header'
+
+article
+
+  h1 = page.title
+
+  == yield
+
+  ul
+    - for recipe in recipes
+      li
+        a href='#{recipe[0]}' = recipe[1]
+
+= partial 'partials/footer'
+
