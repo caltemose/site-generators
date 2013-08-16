@@ -24,6 +24,7 @@ end
 page "/*", :layout => 'basic'
 page "/recipes/*", :layout => "recipe"
 page "/recipes/index.html", :layout => "recipe-list"
+page "/recipes/tools.html", :layout => "basic"
 
 activate :livereload
 activate :directory_indexes
